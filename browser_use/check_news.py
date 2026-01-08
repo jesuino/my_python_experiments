@@ -8,14 +8,12 @@ browser = Browser(
          chrome_instance_path='/usr/bin/chromium-browser'
     )
 )
-
-
 # Initialize the model
-llm=ChatOllama(model="qwen2.5", num_ctx=32000)
+llm=ChatOllama(model="qwen2.5", num_ctx=16000)
 
 # Create agent with the model
 agent = Agent(
-    task="Open the website news.google.com and summarize the headlines in Google News website",
+    task="Open the website https://news.google.com and summarize the headlines in Google News website",
     llm=llm,
     browser=browser
 )
